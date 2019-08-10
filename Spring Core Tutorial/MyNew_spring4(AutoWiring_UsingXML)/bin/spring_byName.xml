@@ -1,0 +1,25 @@
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:p="http://www.springframework.org/schema/p"
+        xmlns:c="http://www.springframework.org/schema/c"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+
+
+<!--byName -->
+<bean id="engine" class="org.btm.myBeans.Engine">
+<property name="modelYear" value="2014"/>
+</bean>
+<bean id="e2" class="org.btm.myBeans.Engine" autowire-candidate="false">
+<property name="modelYear" value="2015"></property>
+</bean>
+
+
+<bean id="c" class="org.btm.myBeans.Car" autowire="byName">
+<!-- <property name="engine" ref="e1"></property> -->
+</bean>
+
+</beans>
